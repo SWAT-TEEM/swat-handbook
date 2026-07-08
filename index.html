@@ -176,7 +176,7 @@ ol{
 
 <button onclick="show('schedule')">📅 جدول SWAT</button>
 
-<button onclick="show('wanted')">🚨 المطلوبين</button>
+<button onclick="openWanted()">🚨 المطلوبين</button>
     
 </div>
 
@@ -360,7 +360,17 @@ ol{
 
 </div>
 <script>
+function openWanted(){
 
+    let password = prompt("🔒 أدخل رمز الدخول:");
+
+    if(password === "SWAT2026"){
+        show('wanted');
+    }else{
+        alert("❌ رمز الدخول غير صحيح");
+    }
+
+}
 function show(id){
 
 document.getElementById("home").style.display="none";
