@@ -371,8 +371,32 @@ pages.forEach(page => page.style.display = "none");
 
 }
 
-</script>
+document.getElementById("addWanted").addEventListener("click", function(){
 
+const name = prompt("اسم المطلوب:");
+if(!name) return;
+
+const crime = prompt("التهمة:");
+if(!crime) return;
+
+const card = document.createElement("div");
+
+card.style.background = "#1b232d";
+card.style.border = "1px solid #3d4b59";
+card.style.borderRadius = "10px";
+card.style.padding = "15px";
+card.style.marginTop = "15px";
+
+card.innerHTML = `
+<h3 style="color:#d8c27a;">${name}</h3>
+<p>التهمة: ${crime}</p>
+`;
+
+document.getElementById("wantedList").appendChild(card);
+
+});
+
+</script>
 </div>
 
 </body>
