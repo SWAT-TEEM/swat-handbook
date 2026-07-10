@@ -124,6 +124,18 @@ padding:6px 14px;
 border-radius:30px;
 }
 
+select,
+textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#1b232d;
+border:1px solid #3d4b59;
+border-radius:8px;
+color:white;
+font-size:15px;
+}
+    
 input{
 width:100%;
 padding:15px;
@@ -167,6 +179,7 @@ padding-right:25px;
 
 <button onclick="show('wantedLogin')">🚨 المطلوبين</button>
 
+<button onclick="show('reports')">📄 تقارير SWAT</button>
 </div>
 
 
@@ -386,7 +399,83 @@ padding-right:25px;
 <button class="back" onclick="home()">رجوع</button>
 
 </div>
+<div id="reports" class="page">
 
+<h1>📄 تقارير SWAT</h1>
+
+<p style="text-align:center;margin:20px 0;color:#ccc;">
+يختص هذا القسم بتوثيق جميع عمليات ومهام فرقة SWAT.
+</p>
+
+<button onclick="show('createReport')">📤 إنشاء تقرير</button>
+
+<button onclick="show('reportsList')">📂 عرض التقارير</button>
+
+<button onclick="show('reportsLogin')">🔒 التقارير السرية</button>
+    
+<button class="back" onclick="home()">رجوع</button>
+
+</div>
+<div id="createReport" class="page">
+
+<h1>📤 إنشاء تقرير</h1>
+
+<input placeholder="🆔 رقم التقرير">
+<input type="date">
+<input type="time">
+<input placeholder="👮 قائد العملية">
+<input placeholder="👥 المشاركون">
+
+<select style="width:100%;padding:15px;margin:10px 0;background:#1b232d;border:1px solid #3d4b59;border-radius:8px;color:white;">
+<option>مداهمة</option>
+<option>اقتحام</option>
+<option>إنقاذ رهائن</option>
+<option>ملاحقة</option>
+<option>عملية خاصة</option>
+<option>تدريب</option>
+</select>
+
+<input placeholder="📍 موقع العملية">
+
+<textarea
+placeholder="📝 تفاصيل التقرير"
+style="width:100%;height:180px;padding:15px;margin:10px 0;background:#1b232d;border:1px solid #3d4b59;border-radius:8px;color:white;"></textarea>
+
+<button>📤 حفظ التقرير</button>
+
+<button class="back" onclick="show('reports')">رجوع</button>
+
+</div>
+<div id="reportsList" class="page">
+
+<h1>📂 عرض التقارير</h1>
+
+<p style="text-align:center;color:#aaa;">
+لا توجد تقارير حالياً.
+</p>
+
+<button class="back" onclick="show('reports')">
+رجوع
+</button>
+
+</div>
+<div id="reportsLogin" class="page">
+
+<div class="login-box">
+
+<h1>🔒 التقارير السرية</h1>
+
+<input type="password" placeholder="رمز الدخول">
+
+<button>دخول</button>
+
+<button class="back" onclick="show('reports')">
+رجوع
+</button>
+
+</div>
+
+</div>
 <script>
 
 function show(id){
