@@ -13,158 +13,138 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
 body{
-    background:#070b10;
-    color:#e5e5e5;
-    margin:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+background:#070b10;
+color:#e5e5e5;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
 
-    background-image:
-        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-    background-size:40px 40px;
+background-image:
+linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+background-size:40px 40px;
 }
-.logo{
-    display:block;
-    width:120px;
-    height:120px;
-    object-fit:contain;
-    margin:0 auto 20px;
-    filter:drop-shadow(0 0 10px #000);
-}
+
 .container{
-    width:95%;
-    max-width:1200px;
-    background:#11161d;
-    border:1px solid #2a323d;
-    border-radius:18px;
-    padding:35px;
-    box-shadow:0 0 40px rgba(0,0,0,.7);
+width:95%;
+max-width:1200px;
+background:#11161d;
+border:1px solid #2a323d;
+border-radius:18px;
+padding:35px;
+box-shadow:0 0 40px rgba(0,0,0,.7);
 }
+
+.logo{
+display:block;
+width:120px;
+height:120px;
+object-fit:contain;
+margin:0 auto 20px;
+filter:drop-shadow(0 0 10px #000);
+}
+
 h1{
-    text-align:center;
-    color:#d8c27a;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    margin-bottom:30px;
+text-align:center;
+color:#d8c27a;
+letter-spacing:3px;
+margin-bottom:30px;
 }
+
 button{
-    width:100%;
-    padding:16px;
-    margin:12px 0;
-    background:#1b232d;
-    border:1px solid #3d4b59;
-    border-radius:8px;
-    color:#d8c27a;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.25s;
+width:100%;
+padding:16px;
+margin:12px 0;
+background:#1b232d;
+border:1px solid #3d4b59;
+border-radius:8px;
+color:#d8c27a;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
 }
 
 button:hover{
-    background:#2b3642;
-    border-color:#d8c27a;
-    box-shadow:0 0 15px rgba(216,194,122,.35);
-}
-
-.back{
-    background:#3a2020;
-    border-color:#6b4444;
-    color:#fff;
-}
-
-.back:hover{
-    background:#542b2b;
-}
-.page{
-display:none;
+background:#2b3642;
+border-color:#d8c27a;
 }
 
 .back{
 background:#333;
-}
-.swat-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#151c24;
-}
-
-.swat-table th{
-    background:#202934;
-    color:#d8c27a;
-    padding:14px;
-}
-
-.swat-table td{
-    padding:14px;
-    border-bottom:1px solid #2b3642;
-}
-
-.swat-table tr:hover{
-    background:#222d39;
-}
-
-.status{
-    background:#d8c27a;
-    color:#111;
-    padding:6px 14px;
-    border-radius:30px;
-    font-weight:bold;
-}
-
-.member{
-    background:#2a313d;
-    color:#fff;
-    padding:6px 14px;
-    border-radius:30px;
-}
-ol{
-    line-height:2;
-    padding-right:25px;
+color:white;
 }
 
 .page{
-    animation:fade .25s ease;
+display:none;
+animation:fade .25s;
 }
 
 @keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+from{
+opacity:0;
+transform:translateY(10px);
 }
-    input{
-    width:100%;
-    padding:15px;
-    margin:10px 0;
-    background:#1b232d;
-    border:1px solid #3d4b59;
-    border-radius:8px;
-    color:white;
-    font-size:16px;
+to{
+opacity:1;
+transform:translateY(0);
 }
-    .login-box{
-    background:#11161d;
-    border:1px solid #3d4b59;
-    border-radius:15px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 0 25px rgba(0,0,0,.6);
+}
+
+.swat-table{
+width:100%;
+border-collapse:collapse;
+background:#151c24;
+}
+
+.swat-table th{
+background:#202934;
+color:#d8c27a;
+padding:14px;
+}
+
+.swat-table td{
+padding:14px;
+border-bottom:1px solid #2b3642;
+}
+
+.status{
+background:#d8c27a;
+color:#111;
+padding:6px 14px;
+border-radius:30px;
+}
+
+.member{
+background:#2a313d;
+color:white;
+padding:6px 14px;
+border-radius:30px;
+}
+
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#1b232d;
+border:1px solid #3d4b59;
+border-radius:8px;
+color:white;
+}
+
+.login-box{
+background:#11161d;
+border:1px solid #3d4b59;
+border-radius:15px;
+padding:25px;
+text-align:center;
+}
+
+ol{
+line-height:2;
+padding-right:25px;
 }
 </style>
 </head>
@@ -173,34 +153,34 @@ ol{
 
 <div class="container">
 
-<div id="home">
+    <div id="home">
 
-<img src="/swat-logo.png" class="logo">
-    
+<img src="swat-logo.png" class="logo">
+
 <h1>SWAT HANDBOOK</h1>
+
 <button onclick="show('rules')">📋 قوانين SWAT</button>
 
 <button onclick="show('uniform')">👕 لبس SWAT</button>
 
 <button onclick="show('schedule')">📅 جدول SWAT</button>
 
-<button onclick="show('wantedLogin')">🚨 المطلوبين</button>    
+<button onclick="show('wantedLogin')">🚨 المطلوبين</button>
 
-<button onclick="show('aiPage')">🤖 اسألني</button>
 </div>
+
 
 <div id="rules" class="page">
 
 <h1>القوانين</h1>
 
 <ol>
+
 <li>الالتزام التام بأوامر قائد الفريق أو المسؤول الأعلى رتبة.</li>
 
 <li>يمنع خروج أي دورية أو تنفيذ أي عملية إلا بعد إذن المسؤول.</li>
 
 <li>يمنع الحديث أو المزاح أثناء الاصطفاف أو تنفيذ المهام.</li>
-
-<li>يمنع دخول أو مغادرة الاصطفاف إلا بإذن مباشر من المسؤول.</li>
 
 <li>الالتزام بالزي الرسمي الكامل والمعدات المعتمدة.</li>
 
@@ -210,24 +190,16 @@ ol{
 
 <li>الالتزام بالصمت اللاسلكي وعدم الإرسال إلا عند الحاجة.</li>
 
-<li>يمنع مغادرة المهمة إلا بعد موافقة قائد العملية.</li>
-
-<li>المحافظة على جاهزية السلاح والمعدات قبل وبعد كل مهمة.</li>
-
-<li>الالتزام بالحضور في الوقت المحدد لجميع الاصطفافات.</li>
-
-<li>يمنع استخدام مركبات أو معدات SWAT لأغراض شخصية.</li>
-
-<li>أي مخالفة تعرض العضو للمساءلة والعقوبات الإدارية.</li>
-
 <li>احترام جميع أفراد الفرقة والالتزام بالانضباط العسكري.</li>
 
 <li>شعار الفرقة: الانضباط - السرية - التنفيذ.</li>
+
 </ol>
 
 <button class="back" onclick="home()">رجوع</button>
 
 </div>
+
 
 <div id="uniform" class="page">
 
@@ -239,24 +211,23 @@ ol{
 
 </div>
 
+
 <div id="schedule" class="page">
 
-<h1>جدول السوات</h1>
-<div style="overflow-x:auto;">
+<h1>جدول SWAT</h1>
+
+<div style="overflow-x:auto">
+
 <table class="swat-table">
 
-<thead>
 <tr>
 <th>#</th>
 <th>الاسم</th>
 <th>الرتبة</th>
 <th>المنصب</th>
 <th>الوحدة</th>
-<th>الحالة</th>
 </tr>
-</thead>
 
-<tbody>
 
 <tr>
 <td>01</td>
@@ -264,8 +235,8 @@ ol{
 <td>R-0</td>
 <td>SWAT Chief</td>
 <td>Command</td>
-<td><span class="status">قيادة عليا</span></td>
 </tr>
+
 
 <tr>
 <td>02</td>
@@ -273,26 +244,26 @@ ol{
 <td>R-1</td>
 <td>Deputy Chief</td>
 <td>Command</td>
-<td><span class="status">نائب القيادة</span></td>
 </tr>
+
 
 <tr>
 <td>03</td>
 <td>Turki Al-Mutairi</td>
 <td>R-2</td>
 <td>Supervisor</td>
-<td>Leader Alpha</td>
-<td><span class="status">إشراف</span></td>
+<td>Alpha</td>
 </tr>
+
 
 <tr>
 <td>04</td>
 <td>James Morgan</td>
 <td>R-3</td>
 <td>Supervisor</td>
-<td>Leader Bravo</td>
-<td><span class="status">إشراف</span></td>
+<td>Bravo</td>
 </tr>
+
 
 <tr>
 <td>05</td>
@@ -300,8 +271,8 @@ ol{
 <td>R-4</td>
 <td>Member</td>
 <td>Alpha</td>
-<td><span class="member">عضو</span></td>
 </tr>
+
 
 <tr>
 <td>06</td>
@@ -309,8 +280,8 @@ ol{
 <td>R-5</td>
 <td>Member</td>
 <td>Alpha</td>
-<td><span class="member">عضو</span></td>
 </tr>
+
 
 <tr>
 <td>07</td>
@@ -318,16 +289,17 @@ ol{
 <td>R-6</td>
 <td>Member</td>
 <td>Alpha</td>
-<td><span class="member">عضو</span></td>
 </tr>
+
+
 <tr>
 <td>08</td>
 <td>James Kruise</td>
 <td>R-7</td>
 <td>Member</td>
 <td>Bravo</td>
-<td><span class="member">عضو</span></td>
 </tr>
+
 
 <tr>
 <td>09</td>
@@ -335,8 +307,8 @@ ol{
 <td>R-8</td>
 <td>Member</td>
 <td>Bravo</td>
-<td><span class="member">عضو</span></td>
 </tr>
+
 
 <tr>
 <td>10</td>
@@ -344,35 +316,18 @@ ol{
 <td>R-9</td>
 <td>Member</td>
 <td>Bravo</td>
-<td><span class="member">عضو</span></td>
 </tr>
 
-<tr>
-<td>11</td>
-<td>ريان خالد</td>
-<td>R-10</td>
-<td>Member</td>
-<td>Bravo</td>
-<td><span class="member">عضو</span></td>
-</tr>
-    
-<tr>
-<td>12</td>
-<td>JOHN Marly </td>
-<td>R-11</td>
-<td>Member</td>
-<td>Alpha</td>
-<td><span class="member">عضو</span></td>
-</tr>
-
-
-</tbody>
 
 </table>
+
 </div>
+
 <button class="back" onclick="home()">رجوع</button>
 
 </div>
+
+
 <div id="wantedLogin" class="page">
 
 <div class="login-box">
@@ -388,387 +343,205 @@ ol{
 </div>
 
 </div>
+
+
 <div id="wanted" class="page">
+
 <h1>🚨 قائمة المطلوبين</h1>
 
 <input id="wantedName" placeholder="اسم المطلوب">
 
 <input id="wantedCrime" placeholder="التهمة">
 
-<button id="addWanted">➕ إضافة مطلوب</button>
+<button id="addWanted">
+➕ إضافة مطلوب
+</button>
 
 <div id="wantedList"></div>
 
 <button class="back" onclick="home()">رجوع</button>
 
 </div>
-<div id="aiPage" class="page">
-    
-<h1>🤖 اسألني</h1>
 
-<div id="chatBox" style="
-height:400px;
-overflow-y:auto;
-background:#151c24;
-border:1px solid #2a323d;
-border-radius:10px;
-padding:15px;
-margin-bottom:15px;
-"></div>
-
-<input
-id="userQuestion"
-placeholder="اكتب سؤالك هنا...">
-
-<button onclick="askAI()">إرسال</button>
-    
-<button onclick="clearChat()" style="background:#7a1f1f;">
-🗑️ حذف المحادثة
-</button>
-
-<button class="back" onclick="home()">رجوع</button>
-</div>
 <script>
-function checkWantedPassword(){
 
-let pass = document.getElementById("wantedPassword").value;
-
-if(pass === "1029"){
-
-    document.getElementById("wantedPassword").value="";
-    show("wanted");
-
-}else{
-
-    alert("❌ رمز الدخول غير صحيح");
-
-}
-
-}function show(id){
+function show(id){
 
 document.getElementById("home").style.display="none";
 
-const pages = document.querySelectorAll(".page");
-pages.forEach(page => page.style.display = "none");
+let pages=document.querySelectorAll(".page");
 
-document.getElementById(id).style.display = "block";
+pages.forEach(page=>{
+page.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
 
 }
+
 
 function home(){
 
 document.getElementById("home").style.display="block";
 
-const pages = document.querySelectorAll(".page");
-pages.forEach(page => page.style.display = "none");
+let pages=document.querySelectorAll(".page");
+
+pages.forEach(page=>{
+page.style.display="none";
+});
 
 }
 
-let wantedData = JSON.parse(localStorage.getItem("wanted")) || [];
+
+// نظام دخول المطلوبين
+
+function checkWantedPassword(){
+
+let pass=document.getElementById("wantedPassword").value;
+
+if(pass==="1029"){
+
+document.getElementById("wantedPassword").value="";
+
+show("wanted");
+
+}else{
+
+alert("❌ رمز الدخول غير صحيح");
+
+}
+
+}
+
+
+
+// حفظ المطلوبين
+
+let wantedData=JSON.parse(localStorage.getItem("wanted")) || [];
+
 
 function saveWanted(){
-    localStorage.setItem("wanted", JSON.stringify(wantedData));
+
+localStorage.setItem("wanted",JSON.stringify(wantedData));
+
 }
+
+
 
 function displayWanted(){
 
-    const list = document.getElementById("wantedList");
-    list.innerHTML = "";
+let list=document.getElementById("wantedList");
 
-    wantedData.forEach((item,index)=>{
-
-        const card = document.createElement("div");
-
-        card.style.background = "#1b232d";
-        card.style.border = "1px solid #3d4b59";
-        card.style.borderRadius = "10px";
-        card.style.padding = "15px";
-        card.style.marginTop = "15px";
-
-        card.innerHTML = 
-        <h3 style="color:#d8c27a;">${item.name}</h3>
-        <p>التهمة: ${item.crime}</p>
-
-        <button onclick="deleteWanted(${index})"
-        style="background:#542b2b;color:white;margin-top:10px;">
-        حذف المطلوب
-        </button>
-        ;
-
-        list.appendChild(card);
-
-    });
-}
+list.innerHTML="";
 
 
-function deleteWanted(index){
-
-    wantedData.splice(index,1);
-    saveWanted();
-    displayWanted();
-
-}
+wantedData.forEach((item,index)=>{
 
 
-document.getElementById("addWanted").addEventListener("click", function(){
-
-    const name = document.getElementById("wantedName").value;
-    const crime = document.getElementById("wantedCrime").value;
-
-    if(!name || !crime) return;
+let card=document.createElement("div");
 
 
-    wantedData.push({
-        name:name,
-        crime:crime
-    });
+card.style.background="#1b232d";
+card.style.border="1px solid #3d4b59";
+card.style.borderRadius="10px";
+card.style.padding="15px";
+card.style.marginTop="15px";
 
 
-    saveWanted();
-    displayWanted();
+card.innerHTML=`
+
+<h3 style="color:#d8c27a;">
+${item.name}
+</h3>
+
+<p>
+التهمة: ${item.crime}
+</p>
 
 
-    document.getElementById("wantedName").value="";
-    document.getElementById("wantedCrime").value="";
+<button onclick="deleteWanted(${index})"
+style="background:#542b2b;color:white">
+
+حذف المطلوب
+
+</button>
+
+`;
+
+
+list.appendChild(card);
+
 
 });
 
 
+}
+
+
+
+function deleteWanted(index){
+
+wantedData.splice(index,1);
+
+saveWanted();
+
 displayWanted();
-    
-function askAI(){
-
-const q = document.getElementById("userQuestion").value.trim();
-if(q==="") return;
-
-const question = q.toLowerCase();
-const chat = document.getElementById("chatBox");
-
-chat.innerHTML += 
-<div style="text-align:right;margin:10px 0;">
-<b style="color:#4da3ff;">أنت:</b><br>${q}
-</div>
-;
-
-let a="❌ لا توجد معلومات مسجلة عن ذلك.";
-
-
-// التحية
-question.includes("السلام عليكم") ||
-question.includes("سلام") ||
-question.includes("هلا") ||
-question.includes("مرحبا") ||
-question.includes("أهلا") ||
-question.includes("اهلا") ||
-question.includes("هاي") ||
-question.includes("صباح الخير") ||
-question.includes("مساء الخير")
-
-// قائد SWAT
-question.includes("قائد") ||
-question.includes("القائد") ||
-question.includes("قائد السوات") ||
-question.includes("من قائد السوات") ||
-question.includes("من قائد swat") ||
-question.includes("قائد swat") ||
-question.includes("رئيس السوات")
-
-// نائب قائد SWAT
-question.includes("النائب") ||
-question.includes("من النائب") ||
-question.includes("نائب السوات") ||
-question.includes("نائب قائد السوات") ||
-question.includes("نائب قائد swat") ||
-question.includes("من نائب السوات") ||
-question.includes("نائب swat")
-
-// رئيس LSPD
-question.includes("رئيس lspd") ||
-question.includes("من رئيس lspd") ||
-question.includes("رئيس الشرطة") ||
-question.includes("رئيس الشرطه") ||
-question.includes("من رئيس الشرطة") ||
-question.includes("من رئيس الشرطه") ||
-question.includes("قيادة الشرطة") ||
-question.includes("قيادة lspd")
-
-// نائب رئيس LSPD
-question.includes("نائب رئيس lspd") ||
-question.includes("من نائب رئيس lspd") ||
-question.includes("نائب الشرطة") ||
-question.includes("نائب رئيس الشرطة") ||
-question.includes("نائب رئيس الشرطه") ||
-question.includes("من نائب الشرطة") ||
-question.includes("نائب lspd")
-
-// المشرفين
-question.includes("المشرف") ||
-question.includes("المشرفين") ||
-question.includes("من المشرف") ||
-question.includes("supervisor")
-
-// فريق Alpha
-question.includes("الفا") ||
-question.includes("alpha") ||
-question.includes("اعضاء alpha") ||
-question.includes("أعضاء alpha") ||
-question.includes("فريق alpha") ||
-question.includes("وحدة alpha")
-
-// فريق Bravo
-question.includes("برافو") ||
-question.includes("bravo") ||
-question.includes("اعضاء bravo") ||
-question.includes("أعضاء bravo") ||
-question.includes("فريق bravo") ||
-question.includes("وحدة bravo")
-
-// عدد الأعضاء
-question.includes("كم عضو") ||
-question.includes("عدد الاعضاء") ||
-question.includes("عدد الأعضاء") ||
-question.includes("كم عدد الاعضاء") ||
-question.includes("كم عدد الأعضاء") ||
-question.includes("عدد الفريق")
-
-// الرتب
-question.includes("الرتب") ||
-question.includes("رتب") ||
-question.includes("رتب السوات") ||
-question.includes("رتبة") ||
-question.includes("rank") ||
-question.includes("الرانكات")
-
-// القوانين
-question.includes("القوانين") ||
-question.includes("قوانين") ||
-question.includes("قوانين السوات") ||
-question.includes("النظام") ||
-question.includes("الأنظمة")
-
-// اللبس
-question.includes("اللبس") ||
-question.includes("الزي") ||
-question.includes("الزي الرسمي") ||
-question.includes("الملابس") ||
-question.includes("اللباس")
-
-// الجدول
-question.includes("الجدول") ||
-question.includes("جدول السوات") ||
-question.includes("جدول") ||
-question.includes("الأعضاء") ||
-question.includes("الاعضاء")
-
-// المطلوبين
-question.includes("المطلوبين") ||
-question.includes("مطلوب") ||
-question.includes("قائمة المطلوبين") ||
-question.includes("اضافة مطلوب") ||
-question.includes("إضافة مطلوب")
-
-// التقارير
-question.includes("تقرير") ||
-question.includes("التقرير") ||
-question.includes("رفع تقرير") ||
-question.includes("كتابة تقرير") ||
-question.includes("كيف اكتب تقرير")
-
-// الترقية
-question.includes("ترقية") ||
-question.includes("الترقية") ||
-question.includes("كيف اترقى") ||
-question.includes("كيف أترقى") ||
-question.includes("الترقيات") ||
-question.includes("ابي ترقية")
-
-// الدعم
-question.includes("دعم") ||
-question.includes("طلب دعم") ||
-question.includes("تعزيز") ||
-question.includes("backup") ||
-question.includes("باك اب")
-
-// الأكواد
-question.includes("اكواد") ||
-question.includes("الأكواد") ||
-question.includes("الكود") ||
-question.includes("الكودات") ||
-question.includes("codes")
-
-// الاقتحام
-question.includes("اقتحام") ||
-question.includes("مداهمة") ||
-question.includes("مداهمه") ||
-question.includes("raid") ||
-question.includes("بنك") ||
-question.includes("اقتحام بنك")
-
-// التدريب
-question.includes("تدريب") ||
-question.includes("التدريب") ||
-question.includes("متى التدريب") ||
-question.includes("موعد التدريب")
-
-// الأسلحة
-question.includes("السلاح") ||
-question.includes("الاسلحة") ||
-question.includes("الأسلحة") ||
-question.includes("وش السلاح") ||
-question.includes("التسليح")
-
-// المركبات
-question.includes("السيارات") ||
-question.includes("المركبات") ||
-question.includes("سيارات السوات") ||
-question.includes("سيارة") ||
-question.includes("المركبة")
-
-// التواصل
-question.includes("اتصال") ||
-question.includes("التواصل") ||
-question.includes("الراديو") ||
-question.includes("اللاسلكي") ||
-question.includes("التردد")
-
-// الانضمام
-question.includes("انضمام") ||
-question.includes("كيف انضم") ||
-question.includes("كيف ادخل السوات") ||
-question.includes("التقديم") ||
-question.includes("التوظيف")
-
-// الشكر
-question.includes("شكرا") ||
-question.includes("شكراً") ||
-question.includes("مشكور") ||
-question.includes("تسلم") ||
-question.includes("يعطيك العافية") ||
-question.includes("بيض الله وجهك")
-
-    
-chat.innerHTML += 
-<div style="text-align:left;margin:10px 0;">
-<b style="color:#d8c27a;">SWAT AI:</b><br>${a}
-</div>
-;
-
-chat.scrollTop = chat.scrollHeight;
-
-document.getElementById("userQuestion").value="";
 
 }
-    function clearChat(){
 
-    if(confirm("هل تريد حذف جميع المحادثة؟")){
 
-        document.getElementById("chatBox").innerHTML = "";
 
-    }
+
+document.getElementById("addWanted").onclick=function(){
+
+
+let name=document.getElementById("wantedName").value;
+
+let crime=document.getElementById("wantedCrime").value;
+
+
+
+if(name==="" || crime===""){
+
+return;
 
 }
+
+
+
+wantedData.push({
+
+name:name,
+
+crime:crime
+
+});
+
+
+
+saveWanted();
+
+displayWanted();
+
+
+
+document.getElementById("wantedName").value="";
+
+document.getElementById("wantedCrime").value="";
+
+
+};
+
+
+
+displayWanted();
+
+
 </script>
+
+
 </div>
 
 </body>
+
 </html>
