@@ -155,7 +155,7 @@ border-radius:8px;
 color:white;
 font-size:15px;
 }
-    
+  
 input{
 width:100%;
 padding:15px;
@@ -433,7 +433,7 @@ margin-top: 15px;
         <button class="back" onclick="show('reports')">رجوع</button>
     </div>
 
-    <!-- شاشة تقديم الترشيح - مع إضافة حقل المُرشِّح -->
+    <!-- شاشة تقديم الترشيح -->
     <div id="submitNomination" class="page">
         <h1>🗳️ ترشيح عضو للانضمام لـ SWAT</h1>
         <p style="text-align:center;margin-bottom:20px;color:#ccc;">يمكن لجميع العساكر ترشيح الكفاءات من خارج أو داخل السلك.</p>
@@ -458,13 +458,16 @@ margin-top: 15px;
     <!-- شاشة عرض وإدارة الترشيحات الواردة -->
     <div id="nomineesList" class="page">
         <h1>📋 طلبات الترشيح الواردة</h1>
-        <div id="nomineesContainer"><p style="text-align:center;color:#aaa;">لا توجد ترشيحات حالياً.</p></div>
+        <div id="nomineesContainer"><p style="text-align:center;color:#aaa;">لا توجد ترشيحات حالياً في النظام.</p></div>
         <button class="back" onclick="home()">رجوع</button>
     </div>
 
 </div>
 
 <script>
+// ⚠️ حط رابط الـ Webhook الفعلي حق الروم حقك هنا بالأسفل بين علامتي التنصيص:
+const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1525308290924281938/xxxxxx";
+
 // قاعدة البيانات المحلية
 let wantedData = JSON.parse(localStorage.getItem("wanted")) || [];
 let reportsData = JSON.parse(localStorage.getItem("swat_reports")) || [];
@@ -733,7 +736,7 @@ function deleteReport(index){
     }
 }
 
-// إدارة الترشيحات (محدثة لدعم اسم المُرشِّح)
+// إدارة الترشيحات (مربوطة بالكامل مع ديسكورد)
 function saveNomination(){
     let byUser = document.getElementById("nomByUser").value.trim();
     let name = document.getElementById("nomName").value.trim();
@@ -745,12 +748,41 @@ function saveNomination(){
         return;
     }
 
+    // 📡 كود إرسال إشعار فوري للديسكورد (Webhook)
+    if(DISCORD_WEBHOOK_URL && DISCORD_WEBHOOK_URL !== "") {
+        const discordPayload = {
+            username: "SWAT Nomination System",
+            avatar_url: "https://i.imgur.com/4M344Uq.png",
+            embeds: [{
+                title: "🗳️ طلب ترشيح جديد قيد الانتظار",
+                description: "تم تقديم ترشيح لعضو جديد من قبل أحد العساكر، يُرجى مراجعته من القادة واتخاذ الإجراء.",
+                color: 16753920, // لون برتقالي
+                fields: [
+                    { name: "👮 تم الترشيح بواسطة (العسكري):", value: `**${byUser}**`, inline: true },
+                    { name: "👤 اسم الشخص المُرشَّح:", value: `**${name}**`, inline: true },
+                    { name: "🎖️ رتبة المُرشَّح الحالية:", value: rank, inline: true },
+                    { name: "📝 أسباب الترشيح والكفاءة:", value: reason, inline: false },
+                    { name: "⚙️ إجراءات القادة السريعة:", value: `[✔ قبول المُرشَّح وتوجيهه](https://discord.com/channels/1525308198951846079/1525308290924281938) \n [✖ رفض الطلب وإغلاقه](https://discord.com/channels/1525308198951846079/1525308290924281938)`, inline: false }
+                ],
+                footer: { text: "نظام التوجيه والترشيح الذكي لـ SWAT" },
+                timestamp: new Date()
+            }]
+        };
+
+        fetch(DISCORD_WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(discordPayload)
+        }).catch(err => console.log("خطأ في إرسال الديسكورد: ", err));
+    }
+
+    // حفظ البيانات محلياً في ملف المرشحين
     nomineesData.push({
         byUser: byUser, name: name, rank: rank, reason: reason, status: "pending"
     });
 
     localStorage.setItem("swat_nominees", JSON.stringify(nomineesData));
-    alert("تم إرسال ترشيحك بنجاح للقادة! 📥👍");
+    alert("تم إرسال ترشيحك بنجاح للقادة وللديسكورد! 📥📡✅");
     
     document.getElementById("nomByUser").value = "";
     document.getElementById("nomName").value = "";
@@ -764,7 +796,7 @@ function displayNominees(){
     container.innerHTML = "";
 
     if(nomineesData.length === 0){
-        container.innerHTML = '<p style="text-align:center;color:#aaa;">لا توجد طلبات ترشيح حالياً في النظام.</p>';
+        container.innerHTML = '<p style="text-align:center;color:#aaa;">لا توجد ترشيحات حالياً في النظام.</p>';
         return;
     }
 
